@@ -7,7 +7,7 @@
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include <Adafruit_SSD1331.h>
 
 #define UP_BUTTON 2
 #define DOWN_BUTTON 3
@@ -22,7 +22,7 @@ const uint8_t PADDLE_HEIGHT = 24;
 #define OLED_RESET 13
 // MOSI is Data pin on display breakout
 
-Adafruit_SSD1306 display(OLED_DC, OLED_RESET, OLED_CS);
+Adafruit_SSD1331 display(OLED_DC, OLED_RESET, OLED_CS);
 
 void drawCourt();
 
@@ -38,7 +38,7 @@ const uint8_t PLAYER_X = 115;
 uint8_t player_y = 16;
 
 void setup() {
-    display.begin(SSD1306_SWITCHCAPVCC);
+    display.begin(SSD1331);
 
     // Display the splash screen (we're legally required to do so)
     display.display();
